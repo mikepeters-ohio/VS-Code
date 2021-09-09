@@ -1,12 +1,11 @@
 #Stoplight (part 2)
 #Convert case statement to an if/else statement
 
-stoplight = ['green', 'yellow', 'red'].sample
+stoplight = ['green', 'yellow', 'red'].sample 
 
-case stoplight
-when 'green'
+if stoplight == 'green'
   puts 'Go!'
-when 'yellow'
+elsif stoplight == 'yellow'
   puts 'Slow down!'
 else
   puts 'Stop!'
