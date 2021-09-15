@@ -50,4 +50,7 @@ puts "This is outside all loops"
 #True is returned if the argument is ('ink)' b/c
 # the string contains 'pink'
 
-#Exercise 92 
+#Exercise 92 - nothing
+#Exercise 93 - Should've been easier for me. Solved != tutor!
+
+
