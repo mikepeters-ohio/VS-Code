@@ -25,7 +25,7 @@ end
 loop do 
   puts "Corolla"
   break
-=end
+end
 
 loop do 
   puts "This is the outer loop"
@@ -39,3 +39,15 @@ end
 
 
 puts "This is outside all loops"
+=end
+
+# Exercise 91 
+
+#An object in a string can be called a "substring"
+
+#On line 3, puts is the cmmd, colors is the variable, 
+#include? is the case-sensitive(!) method, and ('Yellow') is the ARGUMENT. 
+#True is returned if the argument is ('ink)' b/c
+# the string contains 'pink'
+
+#Exercise 92 
