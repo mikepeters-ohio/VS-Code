@@ -52,5 +52,6 @@ puts "This is outside all loops"
 
 #Exercise 92 - nothing
 #Exercise 93 - Should've been easier for me. Solved != tutor!
+#Ex. 94 'Free the lizard'
 
 
