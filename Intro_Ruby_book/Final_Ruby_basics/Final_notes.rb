@@ -52,6 +52,8 @@ puts "This is outside all loops"
 
 #Exercise 92 - nothing
 #Exercise 93 - Should've been easier for me. Solved != tutor!
+#..is an inclusive range, ... is an exclusive one. Double-check 
 #Ex. 94 'Free the lizard'
+#Ex. 95 'One Isn't Enough' 
 
 
