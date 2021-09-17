@@ -54,6 +54,6 @@ puts "This is outside all loops"
 #Exercise 93 - Should've been easier for me. Solved != tutor!
 #..is an inclusive range, ... is an exclusive one. Double-check 
 #Ex. 94 'Free the lizard'
-#Ex. 95 'One Isn't Enough' 
-
+#Ex. 95 'One Isn't Enough' The array outputted never appears on screen
+#Ex. 96 - explains #each method. IMPORTANT 
 
