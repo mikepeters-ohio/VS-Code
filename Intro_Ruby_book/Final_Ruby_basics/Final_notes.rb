@@ -57,3 +57,4 @@ puts "This is outside all loops"
 #Ex. 95 'One Isn't Enough' The array outputted never appears on screen
 #Ex. 96 - explains #each method. IMPORTANT 
 
+#Ex. 102 - 
