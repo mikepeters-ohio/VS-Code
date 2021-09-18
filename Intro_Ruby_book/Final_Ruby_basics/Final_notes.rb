@@ -57,4 +57,10 @@ puts "This is outside all loops"
 #Ex. 95 'One Isn't Enough' The array outputted never appears on screen
 #Ex. 96 - explains #each method. IMPORTANT 
 
-#Ex. 102 - 
+#Ex. 102 - Arrays & Hashes are 'data structures' and probably not
+# the only ones.
+#When creating a hash using Strings as keys, keep in mind 
+#you must use '' and => characters. 
+
+#Ex.103 - if you repeat a key using hash#[]=, Ruby only replaces 
+#the value of the key. It doesn't add it!  
