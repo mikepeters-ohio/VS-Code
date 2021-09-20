@@ -6,7 +6,7 @@ medium: 50,
 low: 10,
 }
 
-#what is enumerable#map?
+#what is enumerable#map? Tutor says will learn it later.
 
 half_numbers = numbers.map {|key, value| value / 2} 
               

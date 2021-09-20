@@ -64,3 +64,6 @@ puts "This is outside all loops"
 
 #Ex.103 - if you repeat a key using hash#[]=, Ruby only replaces 
 #the value of the key. It doesn't add it!  
+
+#Ex. 107 What is enumerable#map? Tutor says will learn it later.
+# Ex. 108 - Most important here is it's lesson on 2 variables referencing the same hash.
