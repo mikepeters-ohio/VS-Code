@@ -66,4 +66,8 @@ puts "This is outside all loops"
 #the value of the key. It doesn't add it!  
 
 #Ex. 107 What is enumerable#map? Tutor says will learn it later.
-# Ex. 108 - Most important here is it's lesson on 2 variables referencing the same hash.
+# Ex. 108 - Most important here is it's lesson on 2 variables referencing the same hash
+#Ex. 110 - .
+
+#Start of DEBUGGING unit
+#Ex. 111 - 
