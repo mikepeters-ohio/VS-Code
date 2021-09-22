@@ -70,4 +70,9 @@ puts "This is outside all loops"
 #Ex. 110 - .
 
 #Start of DEBUGGING unit
-#Ex. 111 - 
+#Ex. 111 -
+#Ex. 112 - 
+#Ex. 113 - 
+#Ex. 114 - aced! 
+#Ex. 115 - Took too long! Forgot #push method, 2nd grammar wrong. 
+#Ex. 116  
