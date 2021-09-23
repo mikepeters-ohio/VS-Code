@@ -75,4 +75,6 @@ puts "This is outside all loops"
 #Ex. 113 - 
 #Ex. 114 - aced! 
 #Ex. 115 - Took too long! Forgot #push method, 2nd grammar wrong. 
-#Ex. 116  
+#Ex. 116 - Konggi is very hard, several answers. 
+#Ex. 117 -
+#Ex. 118 -
