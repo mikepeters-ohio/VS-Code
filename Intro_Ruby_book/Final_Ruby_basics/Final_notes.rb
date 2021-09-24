@@ -78,4 +78,6 @@ puts "This is outside all loops"
 #Ex. 116 - Konggi is very hard, several answers. 
 #Ex. 117 -
 #Ex. 118 -
-#Ex. 119- product on the 3rd line needs to = 1
+#Ex. 119- Colorful things, very complex code 
+#Ex. 120- product on the 3rd line needs to = 1
+#Ex. 121- Line 19 is wrong, line 20 is correct

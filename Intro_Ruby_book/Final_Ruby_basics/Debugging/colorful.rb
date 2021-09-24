@@ -7,9 +7,8 @@ colors.shuffle!
 things.shuffle!
 
 i = 0
-loop do
-  break if i > colors.length
-
+loop { break if i > things.length - 1 }
+  
   if i == 0
     puts 'I have a ' + colors[i] + ' ' + things[i] + '.'
   else
@@ -17,4 +16,3 @@ loop do
   end
 
   i += 1
-end
