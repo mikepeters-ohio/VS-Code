@@ -44,7 +44,7 @@ puts "This is outside all loops"
 #Ex. 22 - first problem with #break 
 
 #Ex. 24  - Control the loop: it's 'break if' on line 6 not 'if break!'
-#Ex. 25 - AGAIN, it's 'if break!
+#Ex. 25 - AGAIN, it's 'break if'!
 #Ex. 26 - The #times method. Need to review. Look at CA notes. 
 # Exercise 91 
 
