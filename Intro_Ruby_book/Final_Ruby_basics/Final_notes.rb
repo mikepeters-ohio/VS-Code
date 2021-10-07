@@ -55,6 +55,8 @@ puts "This is outside all loops"
 #True is returned if the argument is ('ink)' b/c
 # the string contains 'pink'
 
+#Ex. 46- LS printer (part 1) - review it! 
+
 #Exercise 92 - nothing
 #Exercise 93 - Should've been easier for me. Solved != tutor!
 #..is an inclusive range, ... is an exclusive one. Double-check 
