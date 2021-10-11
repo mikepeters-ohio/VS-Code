@@ -57,7 +57,8 @@ puts "This is outside all loops"
 
 #Ex. 46- LS printer (part 1) - review it! 
 
-
+# ? "Breakfast, lunch..." "Return" always stops the program,
+# and nothing else is outputted if it is first in the method.   
 #Exercise 92 - nothing
 #Exercise 93 - Should've been easier for me. Solved != tutor!
 #..is an inclusive range, ... is an exclusive one. Double-check 
