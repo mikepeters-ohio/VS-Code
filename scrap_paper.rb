@@ -1,3 +1,4 @@
+=begin 
 var = 1
 
 loop do 
@@ -6,5 +7,6 @@ loop do
 end 
 
 puts var
+=end 
 
-
+puts "It's true!" if some_method_call 
