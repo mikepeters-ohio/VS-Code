@@ -6,3 +6,9 @@ Notes: The 1st (File::path) returns the string representation of the path.
 PEDAC: n/a 
 =end 
 
+#File::path - returns the string representation of the path.
+#file#path - returns the the pathname used to create 'file' as a string.
+
+puts File.path('bin')
+#f = File.new('my-file.txt')
+#puts f.path
