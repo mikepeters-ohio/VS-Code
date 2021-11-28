@@ -10,3 +10,5 @@ puts reverse_sentence('') == ''
 puts reverse_sentence('    ') == '' # Any number of spaces results in ''
 =end 
 
+def reverse_sentence (words)
+  words.reverse
