@@ -9,4 +9,8 @@ end
 puts var
 =end 
 
-puts "It's true!" if some_method_call 
+#puts "It's true!" if some_method_call 
+
+[1, 2, 3].each do |num|
+  puts num
+end
