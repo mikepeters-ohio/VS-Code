@@ -1,91 +1,68 @@
-def prompt(message) 
-  Kernel.puts ("=> #{message}")
+# Mortgage Calculator
+
+def prompt(message)
+  Kernel.puts("=> #{message}")
 end
 
-def valid_number?(num)
+loop do 
+  prompt("Welcome to the Bailey Bros. mortgage calculator!")
+  prompt("------------------------------------------------")
 
-def operation_to_message(op)
-  case op
-  when '1'
-    'Adding'
-  when '2'
-    'Subtracting'
-  when '3'
-    'Multiplying'
-  when '4'
-    'Dividing'
-  end 
-  
-  prompt("Welcome to Mortgage calculator! Don't buy more house than you can afford!! Enter your name:") 
+  prompt("What is the loan amount?")
 
-name = ''
-loop do
-  name = Kernel.gets().chomp()
-
-  if name.empty?()
-    prompt("Make sure to use a valid name.")
-  else
-    break
-  end
-end 
-
-prompt("Hi, #{name}!")
-
-loop do #main loop
-
-  loan_amount = ''
-
+  amount = ''
   loop do 
-   prompt("What's the amount of the loan you want?")
-   loan_amount = Kernel.gets().chomp()
-  
-    if valid number?(loan_amount)
+    amount = Kernel.gets().chomp()
+
+    if amount.empty?() || amount.to_f() < 0 
+      prompt("Please enter a positive number.")
+    else
       break
-    else 
-      prompt("Hmm...that doesn't look like a valid number")
-  end 
-
-monthly_interest = ''
-
-  loop do 
-    prompt("What's the interest rate your bank is offering?")
-    monthly_interest = Kernel.gets().chomp()
-
-  if valid number?(monthly_interest)
-   break
-  else
-    prompt("Hmm...that doesn't look like a valid number")
+    end
   end
+
+  prompt("What is the interest rate?")
+  prompt("(Example: 5 for 5% or 2.5 for 2.5%)")
+
+  interest rate = ''
+  loop do
+    interest_rate = Kernel.gets().chomp()
+
+    if interest_rate.empty?() || amount.to_f() < 0
+     prompt("Please enter a positive number.")
+   else
+     break
+    end
+  end
+
+  prompt("How long do you want the loan to be (in years)?") 
   
-  loan_months = ''
-
+  years = ''
   loop do 
-    prompt("Please enter the length of your loan using months")
-    loan_months = Kernel.gets().chomp()
+    years = Kernel.gets().chomp()
 
-  if valid number?(loan_months)
-   break
-  else
-    prompt("Hmm...that doesn't look like a valid number")
+    if years.empty?() || years.to_i() < 0
+     prompt("Please enter a positive number.")
+    else
+      break
+    end
   end
 
-  prompt("Your monthly payment will be around #{result} depending on other bank fees")
+  annual_interest_rate = interest_rate.to_f() / 100
+  monthly_interest_rate = annual_interest_rate /12
+  months = years.to_i() * 12
 
-prompt("Thank you for using the calculator. Goodbye!")
+  monthly_payment = amount.to_f()*
+                  (monthly_interest_rate / 
+                  (1 - (1 + monthly_interest_rate)**(-months)))
 
+  prompt("Your monthly payment is: $#{format(%.2f , monthly_payment)}")
+
+  prompt("Another calculation?")
+  answer = Kernel.gets().chomp() 
+
+  break unless answer.downcase().start_with?('y')
 end
 
-=begin
-*Mortgage / Car Loan calculator*
-
-monthly_payment = #225 # ??m
-loan_amount = 10000.00 # p
-monthly_interest = 0.03 # j, to_f
-loan_months = 48.0 #n 
-
-# m = p * (j / (1 - (1 + j)**(-n)))
-
-def monthly_payment(amount)
-  (amount) * (0.03 / (1.0 - (1.0 + 0.03)**(-48.0)))
-  puts monthly_payment
-=end
+prompt("Thank you for using the Bailey Bros. Mortgage Calculator!")
+prompt("And remember 'It's A Wonderful Life' Good bye!")
