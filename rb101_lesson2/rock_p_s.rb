@@ -7,14 +7,33 @@ def prompt(message)
 end 
 
 loop do
+choice = ''
+loop do
   prompt("Choose one: #{VALID_CHOICES.join(', )}")
   choice = Kernel.gets().chomp()
 
   if VALID_CHOICES.include?(choice)
     break 
   else 
-    prompt("That's not a valid choice.")
+    prompt("That is not a valid choice")
   end
 end 
 
-computer_choice = VALID_CHOICES.sample()
+computer_choice = VALID_CHOICES.sample( )
+
+prompt("You chose: #{choice}; Computer chose: #{computer_choice}")
+
+if (choice == 'rock' && computer_choice == 'scissors') ||
+    (choice == 'paper' && computer_choice == 'rock') ||
+    (choice == 'scissors' && computer_choice == 'paper')
+  prompt("You won!")
+elsif (choice == 'rock' && computer_choice == 'scissors') ||
+      (choice == 'paper' && computer_choice == 'scissors') ||
+      (choice == 'scissors' && computer_choice == 'rock')
+  prompt("The computer won!")
+else 
+  prompt("It's a tie!")
+  end
+end
+
+#9:49 mark in video
