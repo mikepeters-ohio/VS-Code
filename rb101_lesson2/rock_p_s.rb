@@ -1,5 +1,3 @@
-#Rock, Paper, Scissors
-
 VALID_CHOICES = ['rock', 'paper', 'scissors']
 
 def prompt(message)
@@ -33,7 +31,12 @@ elsif (choice == 'rock' && computer_choice == 'scissors') ||
   prompt("The computer won!")
 else 
   prompt("It's a tie!")
-  end
 end
 
-#9:49 mark in video
+  prompt("Do you want to play again?")
+  answer = Kernel.gets().chomp()
+  break unless answer.downcase().start_with?('y') 
+end
+
+prompt("Thank you for playing. Good bye!")
+
