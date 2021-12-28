@@ -23,8 +23,6 @@ true to false
  more intuitively like a sentence.  
 6. Double Negation converts a value to Boolean, but this is not usually advisable.
 
-=end
-
 #Question 3 - insert "urgent"
 
 #advice = "Few things in life are as important as house training your pet dinosaur."
@@ -41,20 +39,33 @@ true to false
 
 #Question 5 - Programmatically determine if 42 lies between 10 and 100.
 
-def life
+#def life
   ("10".."100").include?("42")
 end
 
-puts life 
+#puts life 
 
 #Question 6 - Add "four score and " to the front
 
-#famous_words = "seven years ago..."
+famous_words1 = "four score and " 
+famous_words2 = "seven years ago..."
+
+puts famous_words1 + famous_words2
+
 
 #Question 7 - un-nest this array!
 
-#["Fred", "Wilma", ["Barney", "Betty"], ["BamBam", "Pebbles"]]
+array = ["Fred", "Wilma", ["Barney", "Betty"], ["BamBam", "Pebbles"]]
+array.flatten
+
+puts array
+
 
 #Question 8 - Convert this hash to an array just about Barney.
 
-#flintstones = { "Fred" => 0, "Wilma" => 1, "Barney" => 2, "Betty" => 3, "BamBam" => 4, "Pebbles" => 5 }
+flintstones = { "Fred" => 0, "Wilma" => 1, "Barney" => 2, "Betty" => 3, "BamBam" => 4, "Pebbles" => 5 }
+
+  flintstones.select {|value| value == 2 }
+puts flintstones
+
+=end 
