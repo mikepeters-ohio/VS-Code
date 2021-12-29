@@ -75,11 +75,8 @@ end
     OR flintstones.concat(%w(Dino Hoppy))  # concat adds an array rather than one item
 =end 
 
-=begin
+#rescue => exception
   
-rescue => exception
-  
-end
 #8. Shorten the sentence by doing this: 
 
 advice = "Few things in life are as important as house training your pet dinosaur."
@@ -88,16 +85,17 @@ advice = "Few things in life are as important as house training your pet dinosau
 #"Few things in life are as important as ". But leave the advice variable as 
 #"house training your pet dinosaur.".
 
+advice.slice!(0, advice.index('house'))  # => "Few things in life are as important as "
+p advice # => "house training your pet dinosaur."
+
 #As a bonus, what happens if you use the String#slice method instead?
 
-
+=begin
 #9. Write a one-liner to count the number of lower-case 't' characters 
 in the following string:
 
 statement = "The Flintstones Rock!"
 statement.count('t')
-=end 
-
 
 #10. Back in the stone age (before CSS) we used spaces to align things 
 #on the screen. If we had a table of Flintstone family members that was 
