@@ -1,6 +1,5 @@
 # RB101_lesson3_Easy2
 
-
 #1. Is 'Spot' present? Give 3 options!
 
 #ages = { "Herman" => 32, "Lily" => 30, "Grandpa" => 402, "Eddie" => 10 }
@@ -18,8 +17,6 @@
 #This works, too: ages.fetch('Spot', false)
 
 #2. munsters_description = "The Munsters are creepy in a good way."
-
-
 
 #Convert the string in the following ways (code will be executed 
 #on original munsters_description above):
@@ -105,4 +102,3 @@ statement.count('t')
 title = "Flintstone Family Members"
 
 "Flintstone Family Members".center(40)
-   
