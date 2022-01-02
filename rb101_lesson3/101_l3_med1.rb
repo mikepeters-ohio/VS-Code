@@ -66,7 +66,9 @@ limit = 15
 
 def fib(first_num, second_num)
   while first_num + second_num < limit
-    unless #??sum = first_num + second_num
+    unless limit > 15
+      break
+    sum = first_num + second_num
     first_num = second_num
     second_num = sum
   end
@@ -94,3 +96,4 @@ p answer - 8
 =end 
 
 #9 (last one)
+end 
