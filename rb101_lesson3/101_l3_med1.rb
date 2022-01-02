@@ -14,11 +14,8 @@ puts "the value of 40 + 2 is " + (40 + 2)
 You can not add strings and integers together. Quote: 
 "no implicit conversion of Integer into String (TypeError)"
 
-def add do 
-  "the value of 40 + 2 is " + (40 +2).to_s
-  puts add
+#Answers: (40+2).to_s || puts "the value of 40 + 2 is #{40 + 2}"
     
-
 #3 Re-write this program to work without "begin, end, until" 
 
 =begin 
