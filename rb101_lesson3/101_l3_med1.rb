@@ -61,7 +61,7 @@ end
 =end 
 
 #5. Fib calculator 
-
+=begin 
 limit = 15
 
 def fib(first_num, second_num)
@@ -77,7 +77,7 @@ end
 
 result = fib(0, 1)
 puts "result is #{result}"
-
+=end 
 =begin
 #6 
 
@@ -93,7 +93,33 @@ p answer - 8
 
 # The code outputs 34 because p outputs 
 # 'answer' and not the end of the method.
+
+
+#7 - yes, Remember that in Ruby, what gets passed to a method isn't 
+#the value of the object. Under the hood, Ruby passes the object_id of 
+#each argument to the method. The method stores these object_id's internally 
+#in locally scoped (private to the method) variables 
+#(named per the method definition's parameter list).
+
+#8 
+
+def rps(fist1, fist2)
+  if fist1 == "rock"
+    (fist2 == "paper") ? "paper" : "rock"
+  elsif fist1 == "paper"
+    (fist2 == "scissors") ? "scissors" : "paper"
+  else
+    (fist2 == "rock") ? "rock" : "scissors"
+  end
+end
+
+puts rps(rps(rps("rock", "paper"), rps("rock", "scissors")), "rock")
+
+#See the LS website for an answer. 
 =end 
 
 #9 (last one)
+
+#A: 'no'
+
 end 
