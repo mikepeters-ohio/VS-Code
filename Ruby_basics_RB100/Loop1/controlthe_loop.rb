@@ -7,3 +7,6 @@ loop do
   iterations += 1
   break if iterations > 5
 end
+
+#Lines 7 & 8 must be added to the LS example 
+
