@@ -66,6 +66,7 @@ end
 arr 
 =end 
 
+=begin 
 counter = 0
 
 loop do 
@@ -73,4 +74,35 @@ loop do
   counter += 1
   break if counter == 2
 end 
+=end 
 
+=begin 
+counter = 0 
+
+loop do 
+  counter += 1
+  next if counter.odd? 
+  puts counter 
+  break if counter > 5 
+end 
+=end 
+
+=begin 
+alphabet = 'abcdefghijklmnopqrstuvwxyz'
+counter = 0
+
+loop do
+  break if counter == alphabet.size
+  puts alphabet[counter]
+  counter += 1
+end
+=end 
+
+colors = ['blue', 'green', 'yellow', 'purple']
+counter = 0
+
+loop do 
+  break if counter == colors.size 
+  puts "My fave color is #{colors[counter]}!"
+  counter += 1
+end 
