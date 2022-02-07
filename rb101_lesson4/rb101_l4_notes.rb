@@ -96,7 +96,6 @@ loop do
   puts alphabet[counter]
   counter += 1
 end
-=end 
 
 colors = ['blue', 'green', 'yellow', 'purple']
 counter = 0
@@ -106,3 +105,17 @@ loop do
   puts "My fave color is #{colors[counter]}!"
   counter += 1
 end 
+
+
+hash = { a: 1, b: 2, c: 3 }
+
+hash.each do |key, value|
+  puts "The key is #{key} and the value is #{value}"
+end 
+=end 
+
+def a_method
+  [1, 2, 3].each do |num|
+    puts num * 2
+  end
+end
