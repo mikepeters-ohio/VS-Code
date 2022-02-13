@@ -119,3 +119,43 @@ def a_method
     puts num * 2
   end
 end
+
+[1, 2, 3].each do |num|
+  puts num 
+end 
+
+[1, 2, 3].each do |num|
+  puts num 
+end 
+
+[1, 2, 3].each do |num|
+  puts num
+end 
+
+hash = { a: 1, b: 2, c: 3}
+
+hash.each do |key, value|
+  puts "The key is #{key} and the value is #{value}"
+end 
+
+hash = { a: 1, b: 2, c: 3}
+
+hash.each do |key, value|
+  puts "The key is #{key} and the value is #{value}"
+
+hash = { a: 1, b: 2, c: 3 }
+
+hash.each do |key, value|
+  puts "The key is #{key} and the value is #{value}"
+
+[1, 2, 3].map do |num|
+  num * 2
+end 
+
+[1, 2, 3].map do |num|
+  num * 2
+end 
+
+[1, 2, 3].map do |num|
+  num * 2
+end 

@@ -13,7 +13,7 @@ puts var
 
 [1, 2, 3].each do |num|
   puts num
-=end
+
 
 require "pry" # add this to use Pry
 
@@ -24,3 +24,4 @@ loop do
   binding.pry # execution will stop here
   break if counter == 5
 end
+
