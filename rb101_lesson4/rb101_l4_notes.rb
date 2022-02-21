@@ -112,7 +112,7 @@ hash = { a: 1, b: 2, c: 3 }
 hash.each do |key, value|
   puts "The key is #{key} and the value is #{value}"
 end 
-=end 
+ 
 
 def a_method
   [1, 2, 3].each do |num|
@@ -159,3 +159,14 @@ end
 [1, 2, 3].map do |num|
   num * 2
 end 
+=end 
+
+#Ch. 10, practice problem 4
+[1, 2, 3].each_with_object([]) do |num, array|
+  array << num if num.odd?
+end
+# => [1, 3]
+
+['ant', 'bear', 'cat'].each_with_object({}) do |value, hash|
+  hash[value[0]] = value
+end
