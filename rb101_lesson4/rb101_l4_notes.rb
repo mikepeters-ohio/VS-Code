@@ -159,7 +159,7 @@ end
 [1, 2, 3].map do |num|
   num * 2
 end 
-=end 
+
 
 #Ch. 10, practice problem 4
 [1, 2, 3].each_with_object([]) do |num, array|
@@ -170,3 +170,23 @@ end
 ['ant', 'bear', 'cat'].each_with_object({}) do |value, hash|
   hash[value[0]] = value
 end
+=end
+
+def some_method(words)
+  arr = []
+  counter = 0
+
+  loop do
+    word = words[counter]
+    arr << word if word.size < 4
+
+    counter += 1
+    break if counter == words.size
+  end
+
+  arr
+end
+
+poem = %w(April is the cruelest month)
+some_method(poem)
+ 
