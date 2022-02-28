@@ -7,4 +7,8 @@ To get the age, you should generate a random number between 20 and 200.
 
 *use rand method in Kernel
 =end 
+age = rand(20..200)
 
+puts "Teddy is #{age} years old!"
+
+#Further exploration is available on website
