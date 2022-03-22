@@ -3,6 +3,10 @@
 =begin
 More than one way to build this game
 
+def prompt(msg) 
+  puts "=> #{msg}"
+end 
+
 def display_board(brd)
   puts " "
   puts "    |    | "
@@ -25,8 +29,15 @@ def intialize_board
   new_board
 end
 
+def player_places_piece(brd)
+  prompt "Choose a square (1-9): "
+  square = gets.chomp
+end 
+
 board = intialize_board
 display_board(board)
+
+player_places_piece(board) #you want mutation! 
 
 {1 => ' ', 2 => ' ', 3 => ' ', 4 => ' '}
 
