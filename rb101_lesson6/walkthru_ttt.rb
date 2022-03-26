@@ -50,12 +50,32 @@ end
 
 def comp_places_piece!(board) 
   square = empty_squares(brd).sample
-  brd[]
+  brd[square] = COMPUTER_MARKER
 end 
 
-def board_full?()
-# -5:16 mark in Step 3 film 
+def board_full?(brd)
+  empty_squares(brd).empty?
 end 
+
+def someone_won?(brd)
+  !!detect_winner(brd)
+end 
+
+def detect_winner(brd)
+  winning_lines = [[1, 2, 3], [4, 5, 6], [7, 8, 9]] +
+                  [[1, 4, 7], [2, 5, 8], [3, 6, 9]] +
+                  [[1, 5, 9], [3, 5, 7]]
+
+  winning_lines.each do |line|
+    if brd[line[0]] == PLAYER_MARKER &&
+       brd[line[1]] == PLAYER_MARKER &&
+       brd[line[2]] == PLAYER_MARKER -7:36 REMAINING 
+  end 
+end 
+
+end 
+
+
 
 board = intialize_board
 display_board(board)
@@ -65,7 +85,16 @@ loop do
   comp_places_piece!(board)
 #puts board.inspect
   display_board(board)
-  break if someone_won? || board_full?(board)
+  break if someone_won?(board) || board_full?(board)
+end 
+
+if someone_won?(board)
+  prompt "#{detect_winner(board)} won!"
+else
+  prompt "It's a tie!"
+end 
+
+display_board(board)
 {1 => ' ', 2 => ' ', 3 => ' ', 4 => ' '}
 
 puts " "
