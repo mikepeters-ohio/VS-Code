@@ -69,8 +69,17 @@ def detect_winner(brd)
   winning_lines.each do |line|
     if brd[line[0]] == PLAYER_MARKER &&
        brd[line[1]] == PLAYER_MARKER &&
-       brd[line[2]] == PLAYER_MARKER -7:36 REMAINING 
-  end 
+       brd[line[2]] == PLAYER_MARKER  
+       return 'Player'
+    elsif brd[line[0]] == COMPUTER_MARKER &&
+       brd[line[1]] == COMPUTER_MARKER &&
+       brd[line[2]] == COMPUTER_MARKER 
+       return 'Compy_386'
+
+      return 'Compy_386'
+    end 
+  end
+  nil  
 end 
 
 end 
@@ -78,15 +87,20 @@ end
 
 
 board = intialize_board
-display_board(board)
+
 
 loop do 
+  display_board(board)
+
   player_places_piece!(board) #you want mutation! 
+  break if someone_won?(board) || board_full?(board)
+
   comp_places_piece!(board)
 #puts board.inspect
-  display_board(board)
   break if someone_won?(board) || board_full?(board)
 end 
+
+display_board(board)
 
 if someone_won?(board)
   prompt "#{detect_winner(board)} won!"
@@ -94,8 +108,6 @@ else
   prompt "It's a tie!"
 end 
 
-display_board(board)
-{1 => ' ', 2 => ' ', 3 => ' ', 4 => ' '}
 
 puts " "
 =end
