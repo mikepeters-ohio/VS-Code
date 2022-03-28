@@ -2,16 +2,17 @@ INITIAL_MARKER = ' '
 PLAYER_MARKER = 'X'
 COMPUTER_MARKER = 'O'
 
-def prompt(msg) 
+def prompt(msg)
   puts "=> #{msg}"
-end 
+end
 
+# rubocop:disable Metrics/MethodLength
 def display_board(brd)
   system 'clear'
   puts "You're an #{PLAYER_MARKER} and the computer is an #{COMPUTER_MARKER}."
-  puts " "
-  puts "    |    | "
-  puts " #{brd[1]}   | #{brd[2]}   | #{brd[3]} "
+  puts ' '
+  puts '    |    | '
+  puts ' #{brd[1]}   | #{brd[2]}   | #{brd[3]} '
   puts "    |    | "
   puts "--------------- "
   puts "    |    | "
@@ -20,28 +21,27 @@ def display_board(brd)
   puts "--------------- "
   puts "    |    | "
   puts " #{brd[7]}   | #{brd[8]}   |  #{brd[9]} "
-  puts "    |    | "
-
-#end 
-
-def intialize_board
-  new_board = {}
-  (1..9).each {|num| new_board[num] = INITIAL_MARKER}
+  puts "    |    | " 
+# rubocop:enable Metrics/MethodLength
+  
+def initialize_board
+  new_board = { }
+  (1..9).each { |num| new_board[num] = INITIAL_MARKER }
   new_board
 
 def empty_squares(brd)
-   brd.keys.select{|num| brd[num] == INITIAL_MARKER}
+    brd.keys.select{ |num| brd[num] == INITIAL_MARKER }
 end
 
 def player_places_piece!(brd)
-  square = ''
-  loop do
-    prompt "Choose a square (#{empty_squares(brd).join(', ')}):"
-    square = gets.chomp.to_i
-    break if empty_squares(brd).include?(square)
-    prompt "Sorry, that's not a valid choice."
-  end
-  brd[square] = 'PLAYER_MARKER'
+    square = ''
+    loop do
+       prompt "Choose a square (#{empty_squares(brd).join(', ')}):"
+       square = gets.chomp.to_i
+       break if empty_squares(brd).include?(square)
+       prompt "Sorry, that's not a valid choice."
+     end
+     brd[square] = 'PLAYER_MARKER'
 end 
 
 def comp_places_piece!(board) 
@@ -66,23 +66,21 @@ def detect_winner(brd)
     if brd[line[0]] == PLAYER_MARKER &&
        brd[line[1]] == PLAYER_MARKER &&
        brd[line[2]] == PLAYER_MARKER  
-       return 'Player'
+     return 'Player'
     elsif brd[line[0]] == COMPUTER_MARKER &&
        brd[line[1]] == COMPUTER_MARKER &&
        brd[line[2]] == COMPUTER_MARKER 
-       return 'Compy_386'
+    return 'Compy_386'
 
-      return 'Compy_386'
     end 
   end
   nil  
-end 
-
+end
 end 
 
 
 loop do 
-  board = intialize_board
+  board = initialize_board
 
   loop do 
     display_board(board)
@@ -98,9 +96,9 @@ loop do
   display_board(board)
 
   if someone_won?(board)
-   prompt "#{detect_winner(board)} won!"
+     prompt "#{detect_winner(board)} won!"
   else
-   prompt "It's a tie!"
+     prompt "It's a tie!"
 end 
 
 prompt "Play again? (y or n)"
@@ -109,4 +107,4 @@ break unless answer.downcase.start_with?('y')
 end 
 
 prompt "Thanks for playing Tic Tac Toe! Good bye!"
-end 
+end
