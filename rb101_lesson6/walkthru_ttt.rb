@@ -10,9 +10,9 @@ end
 def display_board(brd)
   system 'clear'
   puts "You're an #{PLAYER_MARKER} and the computer is an #{COMPUTER_MARKER}."
-  puts ' '
-  puts '    |    | '
-  puts ' #{brd[1]}   | #{brd[2]}   | #{brd[3]} '
+  puts "" 
+  puts "    |    | "
+  puts " #{brd[1]}   | #{brd[2]}   | #{brd[3]} "
   puts "    |    | "
   puts "--------------- "
   puts "    |    | "
@@ -22,8 +22,10 @@ def display_board(brd)
   puts "    |    | "
   puts " #{brd[7]}   | #{brd[8]}   |  #{brd[9]} "
   puts "    |    | " 
+  puts ""
 # rubocop:enable Metrics/MethodLength
-  
+end 
+
 def initialize_board
   new_board = { }
   (1..9).each { |num| new_board[num] = INITIAL_MARKER }
@@ -34,7 +36,7 @@ def empty_squares(brd)
 end
 
 def player_places_piece!(brd)
-    square = ''
+    square = ' '
     loop do
        prompt "Choose a square (#{empty_squares(brd).join(', ')}):"
        square = gets.chomp.to_i
@@ -46,7 +48,7 @@ end
 
 def comp_places_piece!(board) 
   square = empty_squares(brd).sample
-  brd[square] = COMPUTER_MARKER
+  brd[square] = 'COMPUTER_MARKER'
 end 
 
 def board_full?(brd)
@@ -70,7 +72,7 @@ def detect_winner(brd)
     elsif brd[line[0]] == COMPUTER_MARKER &&
        brd[line[1]] == COMPUTER_MARKER &&
        brd[line[2]] == COMPUTER_MARKER 
-    return 'Compy_386'
+    return 'Computer'
 
     end 
   end
@@ -85,11 +87,11 @@ loop do
   loop do 
     display_board(board)
 
-   player_places_piece!(board) #you want mutation! 
+   player_places_piece!(board) #Note: you want mutation! 
    break if someone_won?(board) || board_full?(board)
 
    comp_places_piece!(board)
-#puts board.inspect
+#Debug step: puts board.inspect
     break if someone_won?(board) || board_full?(board)
   end 
 
@@ -107,4 +109,3 @@ break unless answer.downcase.start_with?('y')
 end 
 
 prompt "Thanks for playing Tic Tac Toe! Good bye!"
-end
