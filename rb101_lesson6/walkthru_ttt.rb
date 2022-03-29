@@ -1,3 +1,5 @@
+require 'pry'
+
 INITIAL_MARKER = ' '
 PLAYER_MARKER = 'X'
 COMPUTER_MARKER = 'O'
@@ -12,15 +14,15 @@ def display_board(brd)
   puts "You're an #{PLAYER_MARKER} and the computer is an #{COMPUTER_MARKER}."
   puts "" 
   puts "    |    | "
-  puts " #{brd[1]}   | #{brd[2]}   | #{brd[3]} "
+  puts " #{brd[1]}  | #{brd[2]}  | #{brd[3]} "
   puts "    |    | "
   puts "--------------- "
   puts "    |    | "
-  puts " #{brd[4]}  | #{brd[5]}   |  #{brd[6]} "
+  puts " #{brd[4]}  | #{brd[5]}  |  #{brd[6]} "
   puts "    |    | "
   puts "--------------- "
   puts "    |    | "
-  puts " #{brd[7]}   | #{brd[8]}   |  #{brd[9]} "
+  puts " #{brd[7]}  | #{brd[8]}  |  #{brd[9]} "
   puts "    |    | " 
   puts ""
 # rubocop:enable Metrics/MethodLength
@@ -30,8 +32,10 @@ def initialize_board
   new_board = { }
   (1..9).each { |num| new_board[num] = INITIAL_MARKER }
   new_board
+end 
 
 def empty_squares(brd)
+binding.pry
     brd.keys.select{ |num| brd[num] == INITIAL_MARKER }
 end
 
@@ -78,12 +82,9 @@ def detect_winner(brd)
   end
   nil  
 end
-end 
-
 
 loop do 
   board = initialize_board
-
   loop do 
     display_board(board)
 
@@ -93,7 +94,7 @@ loop do
    comp_places_piece!(board)
 #Debug step: puts board.inspect
     break if someone_won?(board) || board_full?(board)
-  end 
+end
 
   display_board(board)
 
