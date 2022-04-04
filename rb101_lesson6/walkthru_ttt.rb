@@ -15,19 +15,20 @@ def display_board(brd)
   system 'clear'
   puts "You're an #{PLAYER_MARKER} and the computer is an #{COMPUTER_MARKER}."
   puts ""
-  puts "    |    | "
-  puts " #{brd[1]}  | #{brd[2]}  | #{brd[3]} "
-  puts "    |    | "
-  puts "--------------- "
-  puts "    |    | "
-  puts " #{brd[4]}  | #{brd[5]}  |  #{brd[6]} "
-  puts "    |    | "
-  puts "--------------- "
-  puts "    |    | "
-  puts " #{brd[7]}  | #{brd[8]}  |  #{brd[9]} "
-  puts "    |    | "
+  puts "    |    |     "
+  puts "  #{brd[1]} |  #{brd[2]} | #{brd[3]}   "
+  puts "    |    |     "
+  puts "-------------- "
+  puts "    |    |     "
+  puts "  #{brd[4]} |  #{brd[5]} | #{brd[6]}   "
+  puts "    |    |     "
+  puts "-------------- "
+  puts "    |    |     "
+  puts "  #{brd[7]} |  #{brd[8]} | #{brd[9]}   "
+  puts "    |    |     "
   puts ""
 end
+# rubocop:enable Metrics/MethodLength
 
 def initialize_board
   new_board = {}
@@ -41,15 +42,15 @@ end
 
 def player_places_piece!(brd)
   square = ''
-    loop do
-      prompt "Choose a square (#{empty_squares(brd).join(', ')}):"
+    loop do #Write joinor method !
+      prompt "Choose a square (#{empty_squares(brd).join( '; ')}):"
       square = gets.chomp.to_i
       break if empty_squares(brd).include?(square)
 
       prompt "Sorry, that's not a valid choice."
     end
   brd[square] = PLAYER_MARKER
-end 
+end
 
 def computer_places_piece!(brd)
   square = empty_squares(brd).sample
@@ -72,23 +73,23 @@ def detect_winner(brd)
       return 'Player'
     elsif brd[line[0]] == COMPUTER_MARKER &&
           brd[line[1]] == COMPUTER_MARKER &&
-          brd[line[2]] == COMPUTER_MARKER 
+          brd[line[2]] == COMPUTER_MARKER
       return 'Computer'
     end
   end
-  nil  
+  nil
 end
 
 loop do
   board = initialize_board
   loop do
-  display_board(board)
+    display_board(board)
 
-   player_places_piece!(board)
-   break if someone_won?(board) || board_full?(board)
+    player_places_piece!(board)
+    break if someone_won?(board) || board_full?(board)
 
-   computer_places_piece!(board)
-   break if someone_won?(board) || board_full?(board)
+    computer_places_piece!(board)
+    break if someone_won?(board) || board_full?(board)
   end
 
   display_board(board)
@@ -96,7 +97,7 @@ loop do
     prompt "#{detect_winner(board)} won!"
   else
     prompt "It's a tie!"
-  end 
+  end
 
   prompt "Play again? (y or n)"
   answer = gets.chomp
