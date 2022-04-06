@@ -42,14 +42,23 @@ end
 
 def player_places_piece!(brd)
   square = ''
-    loop do #Write joinor method !
-      prompt "Choose a square (#{empty_squares(brd).join( '; ')}):"
-      square = gets.chomp.to_i
-      break if empty_squares(brd).include?(square)
-
-      prompt "Sorry, that's not a valid choice."
+    def joinor(arr, delimiter=', ', word='or')
+      case arr.size
+      when 0 then ''
+      when 1 then arr.first
+      when 2 then arr.join(" #{word} ")
+      else
+        arr[-1] = "#{word} #{arr.last}"
+        arr.join(delimiter)
     end
-  brd[square] = PLAYER_MARKER
+end
+
+prompt "Choose a position to place a piece: #{joinor(empty_squares(brd))}"
+
+prompt "Sorry, that's not a valid choice."
+end
+
+def brd(square] = PLAYER_MARKER
 end
 
 def computer_places_piece!(brd)
@@ -88,13 +97,43 @@ loop do
   board = initialize_board
   loop do
     display_board(board)
-
+    place_piece!(board, current_player)
+    current_player = alternate_player(current_player)
+    break if someone_won?(board) || board_full?(board)
+  end 
+ #restart here! Almost sure the next thing is to delete 105-6
     player_places_piece!(board)
     break if someone_won?(board) || board_full?(board)
 
-    computer_places_piece!(board)
-    break if someone_won?(board) || board_full?(board)
-  end
+    def find_at_risk_square(line, board, marker)
+      if board.values_at(*line).count(marker) == 2
+        board.select{|k,v| line.include?(k) && v == INITIAL_MARKER}.keys.first
+      else
+        nil
+      end
+    end
+
+      # defense first
+      WINNING_LINES.each do |line|
+        square = find_at_risk_square(line, brd, PLAYER_MARKER)
+        break if square
+      end
+    
+      # offense
+      if !square
+        WINNING_LINES.each do |line|
+          square = find_at_risk_square(line, brd, COMPUTER_MARKER)
+          break if square
+        end
+      end
+
+      # just pick a square
+      if !square
+        square = empty_squares(brd).sample
+      end 
+
+      brd[square] = COMPUTER_MARKER
+    end
 
   display_board(board)
   if someone_won?(board)
