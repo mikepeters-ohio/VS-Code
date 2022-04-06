@@ -10,7 +10,6 @@ def prompt(msg)
   puts "=> #{msg}"
 end
 
-# rubocop:disable Metrics/MethodLength
 def display_board(brd)
   system 'clear'
   puts "You're an #{PLAYER_MARKER} and the computer is an #{COMPUTER_MARKER}."
@@ -28,7 +27,6 @@ def display_board(brd)
   puts "    |    |     "
   puts ""
 end
-# rubocop:enable Metrics/MethodLength
 
 def initialize_board
   new_board = {}
@@ -58,8 +56,7 @@ prompt "Choose a position to place a piece: #{joinor(empty_squares(brd))}"
 prompt "Sorry, that's not a valid choice."
 end
 
-def brd(square] = PLAYER_MARKER
-end
+#def brd(square) == PLAYER_MARKER
 
 def computer_places_piece!(brd)
   square = empty_squares(brd).sample
@@ -144,6 +141,6 @@ loop do
 
   prompt "Play again? (y or n)"
   answer = gets.chomp
-  break unless answer.downcase.start_with?('y')
-end
-prompt "Thanks for playing Tic Tac Toe! Good bye!" end
+  unless answer.downcase.start_with?('y')
+
+prompt "Thanks for playing Tic Tac Toe! Good bye!"
