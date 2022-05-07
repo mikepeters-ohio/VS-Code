@@ -25,4 +25,13 @@ loop do
   break if counter == 5
 =end
 
-"Bob" + "Smith"
+#"Bob" + "Smith"
+
+def say(words)
+  puts words
+end
+
+say("hello")
+say("hi")
+say("how are you")
+say("I'm fine")
