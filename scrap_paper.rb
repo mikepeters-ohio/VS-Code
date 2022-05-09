@@ -23,7 +23,7 @@ loop do
   counter += 1
   binding.pry # execution will stop here
   break if counter == 5
-=end
+
 
 #"Bob" + "Smith"
 
@@ -35,3 +35,18 @@ say("hello")
 say("hi")
 say("how are you")
 say("I'm fine")
+
+=end
+
+#Fred's 109 help
+
+animal = "dog"
+
+loop do |_|
+  animal = "cat"
+  var = "ball"
+  break 
+end 
+
+puts animal
+puts var 
